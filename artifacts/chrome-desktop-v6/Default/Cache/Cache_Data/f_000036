@@ -1,0 +1,403 @@
+export const profile = {
+	name: "Rahul Bhatt",
+	
+	role: "Full Stack Developer | AI Automation Engineer | Creative Frontend Developer",
+	tagline: "Building scalable full-stack systems, AI-powered applications, and immersive web experiences.",
+	altTaglines: [
+		"Crafting intelligent digital experiences with code and creativity.",
+		"Building futuristic web applications powered by AI and real-time systems.",
+		"Developer focused on scalable backend systems, cinematic UI, and AI automation."
+	],
+	about: "Computer Science Engineering student focused on full-stack development, AI automation, backend systems, and immersive web experiences. Passionate about building scalable products with modern UI/UX and intelligent workflows.",
+	availability: "Open to full-stack roles, AI automation work, and creative frontend projects",
+	phone: "+91 7898372675",
+	email: "rahulbhatt.tech@gmail.com",
+	github: "https://github.com/rahulbhattsd",
+	linkedin: "https://linkedin.com/in/rahulbhatt-developer",
+	websiteNames: [
+		"RahulVerse",
+		"Rahul.dev",
+		"Rahul Bhatt Portfolio",
+		"RB Labs",
+		"RahulX",
+		"Cosmic Rahul",
+		"Rahul Interactive"
+	],
+	floatingText: [
+		"Full Stack Engineer",
+		"AI Systems Builder",
+		"Real-Time Applications",
+		"Creative Developer",
+		"Backend Architect",
+		"Automation Workflows",
+		"Immersive Web Experiences"
+	]
+};
+export const projects = [
+	{
+		name: "Mock.ai",
+		type: "AI Automation Platform",
+		description: "Real-time AI interview platform with intelligent automation workflows, WebSocket communication, and Anthropic API integration.",
+		tech: [
+			"Node.js",
+			"WebSockets",
+			"Anthropic API",
+			"Express.js"
+		],
+		metric: "AI Automation",
+		liveUrl: "https://mock-ai-jw8k.onrender.com/",
+		repoUrl: "https://github.com/rahulbhattsd/Mock.ai"
+	},
+	{
+		name: "VibeCart",
+		type: "E-commerce Platform",
+		description: "Scalable e-commerce backend with authentication, REST APIs, Docker deployment, and GitHub Actions automation.",
+		tech: [
+			"React.js",
+			"Node.js",
+			"MongoDB",
+			"Docker",
+			"GitHub Actions"
+		],
+		metric: "Commerce",
+		liveUrl: "https://vibecart-eo6e.onrender.com/",
+		repoUrl: "https://github.com/rahulbhattsd/VibeCart"
+	},
+	{
+		name: "Healthify",
+		type: "AI Assistant",
+		description: "AI-powered assistant using OpenAI APIs with prompt engineering and real-time conversational features.",
+		tech: [
+			"OpenAI API",
+			"Node.js",
+			"Express.js"
+		],
+		metric: "Health AI",
+		liveUrl: "https://healthify-31ok.onrender.com/landing",
+		repoUrl: "https://github.com/rahulbhattsd/healthify"
+	},
+	{
+		name: "StudEdu",
+		type: "Learning Platform",
+		description: "Full-stack learning management platform with enrollment automation and course progress tracking.",
+		tech: [
+			"React.js",
+			"Node.js",
+			"MongoDB"
+		],
+		metric: "EdTech",
+		liveUrl: "https://studedu.onrender.com/",
+		repoUrl: "https://github.com/rahulbhattsd/StudEdu"
+	}
+];
+export const skillGroups = [
+	{
+		label: "Frontend",
+		items: ["JavaScript", "React.js"]
+	},
+	{
+		label: "Backend",
+		items: [
+			"Node.js",
+			"Express.js",
+			"REST APIs",
+			"WebSockets"
+		]
+	},
+	{
+		label: "Data",
+		items: [
+			"MongoDB",
+			"PostgreSQL",
+			"MySQL"
+		]
+	},
+	{
+		label: "AI Automation",
+		items: ["OpenAI API", "Anthropic API"]
+	},
+	{
+		label: "DevOps",
+		items: [
+			"Docker",
+			"AWS",
+			"GitHub Actions"
+		]
+	},
+	{
+		label: "Languages",
+		items: ["C++", "Python"]
+	}
+];
+export const sections = [
+	{
+		id: "about",
+		number: "01",
+		label: "About Me",
+		eyebrow: "Identity Core",
+		face: "front",
+		accent: "#5efcff",
+		faceCopy: "Rahul Bhatt builds full-stack systems, AI automations, and immersive web experiences.",
+		title: "Rahul Bhatt",
+		subtitle: profile.role,
+		summary: profile.about,
+		stats: [
+			"CSE Student",
+			"AI Automation",
+			"Immersive UI"
+		],
+		details: [
+			"Focused on full-stack development, backend architecture, and practical automation workflows.",
+			"Comfortable building real-time systems with WebSockets, REST APIs, databases, and AI integrations.",
+			"Designs modern UI/UX surfaces that feel polished, cinematic, and production-minded."
+		],
+		camera: {
+			position: [
+				0,
+				.34,
+				4.35
+			],
+			target: [
+				0,
+				0,
+				.72
+			]
+		},
+		panel: {
+			position: [
+				0,
+				0,
+				1.74
+			],
+			rotation: [
+				0,
+				0,
+				0
+			]
+		}
+	},
+	{
+		id: "skills",
+		number: "02",
+		label: "Skills",
+		eyebrow: "Capability Matrix",
+		face: "right",
+		accent: "#8b7cff",
+		faceCopy: "JavaScript, React, Node, databases, AI APIs, Docker, AWS, and automation pipelines.",
+		title: "Skills Matrix",
+		subtitle: "Full stack, AI automation, databases, and deployment",
+		summary: "A practical stack for building end-to-end products: responsive React surfaces, reliable Node backends, real-time communication, durable data stores, and cloud-ready automation.",
+		stats: [
+			"16 skills",
+			"AI + Backend",
+			"Cloud Ready"
+		],
+		details: [],
+		camera: {
+			position: [
+				4.1,
+				.26,
+				0
+			],
+			target: [
+				.72,
+				0,
+				0
+			]
+		},
+		panel: {
+			position: [
+				1.74,
+				0,
+				0
+			],
+			rotation: [
+				0,
+				Math.PI / 2,
+				0
+			]
+		}
+	},
+	{
+		id: "projects",
+		number: "03",
+		label: "Projects",
+		eyebrow: "Build Archive",
+		face: "left",
+		accent: "#ff6fb5",
+		faceCopy: "Mock.ai, VibeCart, Healthify, and StudEdu orbit this portfolio.",
+		title: "Project Worlds",
+		subtitle: "AI automation, commerce, health AI, and learning systems",
+		summary: "Each project is shaped as a usable product surface with backend logic, automation, real-time systems, AI workflows, deployment habits, and clean architecture.",
+		stats: [
+			"4 projects",
+			"Live builds",
+			"AI + MERN"
+		],
+		details: [],
+		camera: {
+			position: [
+				-4.1,
+				.26,
+				0
+			],
+			target: [
+				-.72,
+				0,
+				0
+			]
+		},
+		panel: {
+			position: [
+				-1.74,
+				0,
+				0
+			],
+			rotation: [
+				0,
+				-Math.PI / 2,
+				0
+			]
+		}
+	},
+	{
+		id: "contact",
+		number: "04",
+		label: "Contact",
+		eyebrow: "Signal Channel",
+		face: "back",
+		accent: "#7dffae",
+		faceCopy: "Available for full-stack collaboration, AI automation, and creative frontend work.",
+		title: "Contact Rahul",
+		subtitle: "Open to roles, internships, and collaborations",
+		summary: "For full-stack opportunities, AI-powered web applications, automation workflows, and cinematic frontend builds, this channel is open.",
+		stats: [
+			"Email",
+			"Phone",
+			"LinkedIn"
+		],
+		details: [],
+		camera: {
+			position: [
+				0,
+				.3,
+				-4.35
+			],
+			target: [
+				0,
+				0,
+				-.72
+			]
+		},
+		panel: {
+			position: [
+				0,
+				0,
+				-1.74
+			],
+			rotation: [
+				0,
+				Math.PI,
+				0
+			]
+		}
+	},
+	{
+		id: "goals",
+		number: "05",
+		label: "Goals",
+		eyebrow: "Forward Vector",
+		face: "top",
+		accent: "#ffd166",
+		faceCopy: "Ship stronger systems, deepen backend design, and scale AI automation products.",
+		title: "Goals",
+		subtitle: "Where the orbit is headed",
+		summary: "The near-term mission is to grow into a strong full-stack and AI automation engineering role while building products that feel useful, scalable, and memorable.",
+		stats: [
+			"Role Growth",
+			"System Design",
+			"AI Products"
+		],
+		details: [
+			"Land a strong full-stack role and grow inside a serious engineering team.",
+			"Build AI-driven web products that solve practical problems.",
+			"Improve system design, cloud architecture, backend reliability, and scalable automation."
+		],
+		camera: {
+			position: [
+				0,
+				3.9,
+				1.05
+			],
+			target: [
+				0,
+				.72,
+				0
+			]
+		},
+		panel: {
+			position: [
+				0,
+				1.74,
+				0
+			],
+			rotation: [
+				-Math.PI / 2,
+				0,
+				0
+			]
+		}
+	},
+	{
+		id: "status",
+		number: "06",
+		label: "Status",
+		eyebrow: "Live Telemetry",
+		face: "bottom",
+		accent: "#5df2b6",
+		faceCopy: "Currently sharpening full-stack depth, AI integrations, and deployment craft.",
+		title: "Current Status",
+		subtitle: "Building, learning, and preparing for real-world impact",
+		summary: "The current orbit is full-stack execution: shipping projects, refining APIs, exploring OpenAI and Anthropic workflows, and keeping deployment pipelines production-minded.",
+		stats: [
+			"Active Build",
+			"Placement Ready",
+			"Learning Loop"
+		],
+		details: [
+			"Building MERN products with clean state, secure auth, REST APIs, and production deployment habits.",
+			"Exploring OpenAI and Anthropic-powered workflows for interviews, health, learning, and automation.",
+			"Practicing backend fundamentals, database modeling, real-time systems, and cloud-ready delivery."
+		],
+		camera: {
+			position: [
+				0,
+				-3.7,
+				1.05
+			],
+			target: [
+				0,
+				-.72,
+				0
+			]
+		},
+		panel: {
+			position: [
+				0,
+				-1.74,
+				0
+			],
+			rotation: [
+				Math.PI / 2,
+				0,
+				0
+			]
+		}
+	}
+];
+export const sectionMap = sections.reduce((map, section) => {
+	map[section.id] = section;
+	return map;
+}, {});
+
+//# sourceMappingURL=data:application/json;base64,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LEtBQUs7SUFBRztJQUFHO0lBQUU7R0FDL0I7RUFDRjtDQUNEO0VBQ0UsSUFBSTtFQUNKLFFBQVE7RUFDUixPQUFPO0VBQ1AsU0FBUztFQUNULE1BQU07RUFDTixRQUFRO0VBQ1IsVUFBVTtFQUNWLE9BQU87RUFDUCxVQUFVO0VBQ1YsU0FDRTtFQUNGLE9BQU87R0FBQztHQUFnQjtHQUFtQjtHQUFnQjtFQUMzRCxTQUFTO0dBQ1A7R0FDQTtHQUNBO0dBQ0Q7RUFDRCxRQUFRO0dBQ04sVUFBVTtJQUFDO0lBQUcsQ0FBQztJQUFLO0lBQUs7R0FDekIsUUFBUTtJQUFDO0lBQUcsQ0FBQztJQUFNO0lBQUU7R0FDdEI7RUFDRCxPQUFPO0dBQ0wsVUFBVTtJQUFDO0lBQUcsQ0FBQztJQUFNO0lBQUU7R0FDdkIsVUFBVTtJQUFDLEtBQUssS0FBSztJQUFHO0lBQUc7SUFBRTtHQUM5QjtFQUNGO0NBQ0Y7QUFFRCxPQUFPLE1BQU0sYUFBYSxTQUFTLFFBQVEsS0FBSyxZQUFZO0FBQzFELEtBQUksUUFBUSxNQUFNO0FBQ2xCLFFBQU87R0FDTixFQUFFLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsicG9ydGZvbGlvLmpzIl0sInZlcnNpb24iOjMsInNvdXJjZXNDb250ZW50IjpbImV4cG9ydCBjb25zdCBwcm9maWxlID0ge1xuICBuYW1lOiAnUmFodWwgQmhhdHQnLFxuICBicmFuZDogJ1JhaHVsVmVyc2UnLFxuICByb2xlOiAnRnVsbCBTdGFjayBEZXZlbG9wZXIgfCBBSSBBdXRvbWF0aW9uIEVuZ2luZWVyIHwgQ3JlYXRpdmUgRnJvbnRlbmQgRGV2ZWxvcGVyJyxcbiAgdGFnbGluZTogJ0J1aWxkaW5nIHNjYWxhYmxlIGZ1bGwtc3RhY2sgc3lzdGVtcywgQUktcG93ZXJlZCBhcHBsaWNhdGlvbnMsIGFuZCBpbW1lcnNpdmUgd2ViIGV4cGVyaWVuY2VzLicsXG4gIGFsdFRhZ2xpbmVzOiBbXG4gICAgJ0NyYWZ0aW5nIGludGVsbGlnZW50IGRpZ2l0YWwgZXhwZXJpZW5jZXMgd2l0aCBjb2RlIGFuZCBjcmVhdGl2aXR5LicsXG4gICAgJ0J1aWxkaW5nIGZ1dHVyaXN0aWMgd2ViIGFwcGxpY2F0aW9ucyBwb3dlcmVkIGJ5IEFJIGFuZCByZWFsLXRpbWUgc3lzdGVtcy4nLFxuICAgICdEZXZlbG9wZXIgZm9jdXNlZCBvbiBzY2FsYWJsZSBiYWNrZW5kIHN5c3RlbXMsIGNpbmVtYXRpYyBVSSwgYW5kIEFJIGF1dG9tYXRpb24uJyxcbiAgXSxcbiAgYWJvdXQ6XG4gICAgJ0NvbXB1dGVyIFNjaWVuY2UgRW5naW5lZXJpbmcgc3R1ZGVudCBmb2N1c2VkIG9uIGZ1bGwtc3RhY2sgZGV2ZWxvcG1lbnQsIEFJIGF1dG9tYXRpb24sIGJhY2tlbmQgc3lzdGVtcywgYW5kIGltbWVyc2l2ZSB3ZWIgZXhwZXJpZW5jZXMuIFBhc3Npb25hdGUgYWJvdXQgYnVpbGRpbmcgc2NhbGFibGUgcHJvZHVjdHMgd2l0aCBtb2Rlcm4gVUkvVVggYW5kIGludGVsbGlnZW50IHdvcmtmbG93cy4nLFxuICBhdmFpbGFiaWxpdHk6ICdPcGVuIHRvIGZ1bGwtc3RhY2sgcm9sZXMsIEFJIGF1dG9tYXRpb24gd29yaywgYW5kIGNyZWF0aXZlIGZyb250ZW5kIHByb2plY3RzJyxcbiAgcGhvbmU6ICcrOTEgNzg5ODM3MjY3NScsXG4gIGVtYWlsOiAncmFodWxiaGF0dC50ZWNoQGdtYWlsLmNvbScsXG4gIGdpdGh1YjogJ2h0dHBzOi8vZ2l0aHViLmNvbS9yYWh1bGJoYXR0c2QnLFxuICBsaW5rZWRpbjogJ2h0dHBzOi8vbGlua2VkaW4uY29tL2luL3JhaHVsYmhhdHQtZGV2ZWxvcGVyJyxcbiAgd2Vic2l0ZU5hbWVzOiBbXG4gICAgJ1JhaHVsVmVyc2UnLFxuICAgICdSYWh1bC5kZXYnLFxuICAgICdSYWh1bCBCaGF0dCBQb3J0Zm9saW8nLFxuICAgICdSQiBMYWJzJyxcbiAgICAnUmFodWxYJyxcbiAgICAnQ29zbWljIFJhaHVsJyxcbiAgICAnUmFodWwgSW50ZXJhY3RpdmUnLFxuICBdLFxuICBmbG9hdGluZ1RleHQ6IFtcbiAgICAnRnVsbCBTdGFjayBFbmdpbmVlcicsXG4gICAgJ0FJIFN5c3RlbXMgQnVpbGRlcicsXG4gICAgJ1JlYWwtVGltZSBBcHBsaWNhdGlvbnMnLFxuICAgICdDcmVhdGl2ZSBEZXZlbG9wZXInLFxuICAgICdCYWNrZW5kIEFyY2hpdGVjdCcsXG4gICAgJ0F1dG9tYXRpb24gV29ya2Zsb3dzJyxcbiAgICAnSW1tZXJzaXZlIFdlYiBFeHBlcmllbmNlcycsXG4gIF0sXG59XG5cbmV4cG9ydCBjb25zdCBwcm9qZWN0cyA9IFtcbiAge1xuICAgIG5hbWU6ICdNb2NrLmFpJyxcbiAgICB0eXBlOiAnQUkgQXV0b21hdGlvbiBQbGF0Zm9ybScsXG4gICAgZGVzY3JpcHRpb246XG4gICAgICAnUmVhbC10aW1lIEFJIGludGVydmlldyBwbGF0Zm9ybSB3aXRoIGludGVsbGlnZW50IGF1dG9tYXRpb24gd29ya2Zsb3dzLCBXZWJTb2NrZXQgY29tbXVuaWNhdGlvbiwgYW5kIEFudGhyb3BpYyBBUEkgaW50ZWdyYXRpb24uJyxcbiAgICB0ZWNoOiBbJ05vZGUuanMnLCAnV2ViU29ja2V0cycsICdBbnRocm9waWMgQVBJJywgJ0V4cHJlc3MuanMnXSxcbiAgICBtZXRyaWM6ICdBSSBBdXRvbWF0aW9uJyxcbiAgICBsaXZlVXJsOiAnaHR0cHM6Ly9tb2NrLWFpLWp3OGsub25yZW5kZXIuY29tLycsXG4gICAgcmVwb1VybDogJ2h0dHBzOi8vZ2l0aHViLmNvbS9yYWh1bGJoYXR0c2QvTW9jay5haScsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnVmliZUNhcnQnLFxuICAgIHR5cGU6ICdFLWNvbW1lcmNlIFBsYXRmb3JtJyxcbiAgICBkZXNjcmlwdGlvbjpcbiAgICAgICdTY2FsYWJsZSBlLWNvbW1lcmNlIGJhY2tlbmQgd2l0aCBhdXRoZW50aWNhdGlvbiwgUkVTVCBBUElzLCBEb2NrZXIgZGVwbG95bWVudCwgYW5kIEdpdEh1YiBBY3Rpb25zIGF1dG9tYXRpb24uJyxcbiAgICB0ZWNoOiBbJ1JlYWN0LmpzJywgJ05vZGUuanMnLCAnTW9uZ29EQicsICdEb2NrZXInLCAnR2l0SHViIEFjdGlvbnMnXSxcbiAgICBtZXRyaWM6ICdDb21tZXJjZScsXG4gICAgbGl2ZVVybDogJ2h0dHBzOi8vdmliZWNhcnQtZW82ZS5vbnJlbmRlci5jb20vJyxcbiAgICByZXBvVXJsOiAnaHR0cHM6Ly9naXRodWIuY29tL3JhaHVsYmhhdHRzZC9WaWJlQ2FydCcsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnSGVhbHRoaWZ5JyxcbiAgICB0eXBlOiAnQUkgQXNzaXN0YW50JyxcbiAgICBkZXNjcmlwdGlvbjpcbiAgICAgICdBSS1wb3dlcmVkIGFzc2lzdGFudCB1c2luZyBPcGVuQUkgQVBJcyB3aXRoIHByb21wdCBlbmdpbmVlcmluZyBhbmQgcmVhbC10aW1lIGNvbnZlcnNhdGlvbmFsIGZlYXR1cmVzLicsXG4gICAgdGVjaDogWydPcGVuQUkgQVBJJywgJ05vZGUuanMnLCAnRXhwcmVzcy5qcyddLFxuICAgIG1ldHJpYzogJ0hlYWx0aCBBSScsXG4gICAgbGl2ZVVybDogJ2h0dHBzOi8vaGVhbHRoaWZ5LTMxb2sub25yZW5kZXIuY29tL2xhbmRpbmcnLFxuICAgIHJlcG9Vcmw6ICdodHRwczovL2dpdGh1Yi5jb20vcmFodWxiaGF0dHNkL2hlYWx0aGlmeScsXG4gIH0sXG4gIHtcbiAgICBuYW1lOiAnU3R1ZEVkdScsXG4gICAgdHlwZTogJ0xlYXJuaW5nIFBsYXRmb3JtJyxcbiAgICBkZXNjcmlwdGlvbjpcbiAgICAgICdGdWxsLXN0YWNrIGxlYXJuaW5nIG1hbmFnZW1lbnQgcGxhdGZvcm0gd2l0aCBlbnJvbGxtZW50IGF1dG9tYXRpb24gYW5kIGNvdXJzZSBwcm9ncmVzcyB0cmFja2luZy4nLFxuICAgIHRlY2g6IFsnUmVhY3QuanMnLCAnTm9kZS5qcycsICdNb25nb0RCJ10sXG4gICAgbWV0cmljOiAnRWRUZWNoJyxcbiAgICBsaXZlVXJsOiAnaHR0cHM6Ly9zdHVkZWR1Lm9ucmVuZGVyLmNvbS8nLFxuICAgIHJlcG9Vcmw6ICdodHRwczovL2dpdGh1Yi5jb20vcmFodWxiaGF0dHNkL1N0dWRFZHUnLFxuICB9LFxuXVxuXG5leHBvcnQgY29uc3Qgc2tpbGxHcm91cHMgPSBbXG4gIHtcbiAgICBsYWJlbDogJ0Zyb250ZW5kJyxcbiAgICBpdGVtczogWydKYXZhU2NyaXB0JywgJ1JlYWN0LmpzJ10sXG4gIH0sXG4gIHtcbiAgICBsYWJlbDogJ0JhY2tlbmQnLFxuICAgIGl0ZW1zOiBbJ05vZGUuanMnLCAnRXhwcmVzcy5qcycsICdSRVNUIEFQSXMnLCAnV2ViU29ja2V0cyddLFxuICB9LFxuICB7XG4gICAgbGFiZWw6ICdEYXRhJyxcbiAgICBpdGVtczogWydNb25nb0RCJywgJ1Bvc3RncmVTUUwnLCAnTXlTUUwnXSxcbiAgfSxcbiAge1xuICAgIGxhYmVsOiAnQUkgQXV0b21hdGlvbicsXG4gICAgaXRlbXM6IFsnT3BlbkFJIEFQSScsICdBbnRocm9waWMgQVBJJ10sXG4gIH0sXG4gIHtcbiAgICBsYWJlbDogJ0Rldk9wcycsXG4gICAgaXRlbXM6IFsnRG9ja2VyJywgJ0FXUycsICdHaXRIdWIgQWN0aW9ucyddLFxuICB9LFxuICB7XG4gICAgbGFiZWw6ICdMYW5ndWFnZXMnLFxuICAgIGl0ZW1zOiBbJ0MrKycsICdQeXRob24nXSxcbiAgfSxcbl1cblxuZXhwb3J0IGNvbnN0IHNlY3Rpb25zID0gW1xuICB7XG4gICAgaWQ6ICdhYm91dCcsXG4gICAgbnVtYmVyOiAnMDEnLFxuICAgIGxhYmVsOiAnQWJvdXQgTWUnLFxuICAgIGV5ZWJyb3c6ICdJZGVudGl0eSBDb3JlJyxcbiAgICBmYWNlOiAnZnJvbnQnLFxuICAgIGFjY2VudDogJyM1ZWZjZmYnLFxuICAgIGZhY2VDb3B5OiAnUmFodWwgQmhhdHQgYnVpbGRzIGZ1bGwtc3RhY2sgc3lzdGVtcywgQUkgYXV0b21hdGlvbnMsIGFuZCBpbW1lcnNpdmUgd2ViIGV4cGVyaWVuY2VzLicsXG4gICAgdGl0bGU6ICdSYWh1bCBCaGF0dCcsXG4gICAgc3VidGl0bGU6IHByb2ZpbGUucm9sZSxcbiAgICBzdW1tYXJ5OiBwcm9maWxlLmFib3V0LFxuICAgIHN0YXRzOiBbJ0NTRSBTdHVkZW50JywgJ0FJIEF1dG9tYXRpb24nLCAnSW1tZXJzaXZlIFVJJ10sXG4gICAgZGV0YWlsczogW1xuICAgICAgJ0ZvY3VzZWQgb24gZnVsbC1zdGFjayBkZXZlbG9wbWVudCwgYmFja2VuZCBhcmNoaXRlY3R1cmUsIGFuZCBwcmFjdGljYWwgYXV0b21hdGlvbiB3b3JrZmxvd3MuJyxcbiAgICAgICdDb21mb3J0YWJsZSBidWlsZGluZyByZWFsLXRpbWUgc3lzdGVtcyB3aXRoIFdlYlNvY2tldHMsIFJFU1QgQVBJcywgZGF0YWJhc2VzLCBhbmQgQUkgaW50ZWdyYXRpb25zLicsXG4gICAgICAnRGVzaWducyBtb2Rlcm4gVUkvVVggc3VyZmFjZXMgdGhhdCBmZWVsIHBvbGlzaGVkLCBjaW5lbWF0aWMsIGFuZCBwcm9kdWN0aW9uLW1pbmRlZC4nLFxuICAgIF0sXG4gICAgY2FtZXJhOiB7XG4gICAgICBwb3NpdGlvbjogWzAsIDAuMzQsIDQuMzVdLFxuICAgICAgdGFyZ2V0OiBbMCwgMCwgMC43Ml0sXG4gICAgfSxcbiAgICBwYW5lbDoge1xuICAgICAgcG9zaXRpb246IFswLCAwLCAxLjc0XSxcbiAgICAgIHJvdGF0aW9uOiBbMCwgMCwgMF0sXG4gICAgfSxcbiAgfSxcbiAge1xuICAgIGlkOiAnc2tpbGxzJyxcbiAgICBudW1iZXI6ICcwMicsXG4gICAgbGFiZWw6ICdTa2lsbHMnLFxuICAgIGV5ZWJyb3c6ICdDYXBhYmlsaXR5IE1hdHJpeCcsXG4gICAgZmFjZTogJ3JpZ2h0JyxcbiAgICBhY2NlbnQ6ICcjOGI3Y2ZmJyxcbiAgICBmYWNlQ29weTogJ0phdmFTY3JpcHQsIFJlYWN0LCBOb2RlLCBkYXRhYmFzZXMsIEFJIEFQSXMsIERvY2tlciwgQVdTLCBhbmQgYXV0b21hdGlvbiBwaXBlbGluZXMuJyxcbiAgICB0aXRsZTogJ1NraWxscyBNYXRyaXgnLFxuICAgIHN1YnRpdGxlOiAnRnVsbCBzdGFjaywgQUkgYXV0b21hdGlvbiwgZGF0YWJhc2VzLCBhbmQgZGVwbG95bWVudCcsXG4gICAgc3VtbWFyeTpcbiAgICAgICdBIHByYWN0aWNhbCBzdGFjayBmb3IgYnVpbGRpbmcgZW5kLXRvLWVuZCBwcm9kdWN0czogcmVzcG9uc2l2ZSBSZWFjdCBzdXJmYWNlcywgcmVsaWFibGUgTm9kZSBiYWNrZW5kcywgcmVhbC10aW1lIGNvbW11bmljYXRpb24sIGR1cmFibGUgZGF0YSBzdG9yZXMsIGFuZCBjbG91ZC1yZWFkeSBhdXRvbWF0aW9uLicsXG4gICAgc3RhdHM6IFsnMTYgc2tpbGxzJywgJ0FJICsgQmFja2VuZCcsICdDbG91ZCBSZWFkeSddLFxuICAgIGRldGFpbHM6IFtdLFxuICAgIGNhbWVyYToge1xuICAgICAgcG9zaXRpb246IFs0LjEsIDAuMjYsIDBdLFxuICAgICAgdGFyZ2V0OiBbMC43MiwgMCwgMF0sXG4gICAgfSxcbiAgICBwYW5lbDoge1xuICAgICAgcG9zaXRpb246IFsxLjc0LCAwLCAwXSxcbiAgICAgIHJvdGF0aW9uOiBbMCwgTWF0aC5QSSAvIDIsIDBdLFxuICAgIH0sXG4gIH0sXG4gIHtcbiAgICBpZDogJ3Byb2plY3RzJyxcbiAgICBudW1iZXI6ICcwMycsXG4gICAgbGFiZWw6ICdQcm9qZWN0cycsXG4gICAgZXllYnJvdzogJ0J1aWxkIEFyY2hpdmUnLFxuICAgIGZhY2U6ICdsZWZ0JyxcbiAgICBhY2NlbnQ6ICcjZmY2ZmI1JyxcbiAgICBmYWNlQ29weTogJ01vY2suYWksIFZpYmVDYXJ0LCBIZWFsdGhpZnksIGFuZCBTdHVkRWR1IG9yYml0IHRoaXMgcG9ydGZvbGlvLicsXG4gICAgdGl0bGU6ICdQcm9qZWN0IFdvcmxkcycsXG4gICAgc3VidGl0bGU6ICdBSSBhdXRvbWF0aW9uLCBjb21tZXJjZSwgaGVhbHRoIEFJLCBhbmQgbGVhcm5pbmcgc3lzdGVtcycsXG4gICAgc3VtbWFyeTpcbiAgICAgICdFYWNoIHByb2plY3QgaXMgc2hhcGVkIGFzIGEgdXNhYmxlIHByb2R1Y3Qgc3VyZmFjZSB3aXRoIGJhY2tlbmQgbG9naWMsIGF1dG9tYXRpb24sIHJlYWwtdGltZSBzeXN0ZW1zLCBBSSB3b3JrZmxvd3MsIGRlcGxveW1lbnQgaGFiaXRzLCBhbmQgY2xlYW4gYXJjaGl0ZWN0dXJlLicsXG4gICAgc3RhdHM6IFsnNCBwcm9qZWN0cycsICdMaXZlIGJ1aWxkcycsICdBSSArIE1FUk4nXSxcbiAgICBkZXRhaWxzOiBbXSxcbiAgICBjYW1lcmE6IHtcbiAgICAgIHBvc2l0aW9uOiBbLTQuMSwgMC4yNiwgMF0sXG4gICAgICB0YXJnZXQ6IFstMC43MiwgMCwgMF0sXG4gICAgfSxcbiAgICBwYW5lbDoge1xuICAgICAgcG9zaXRpb246IFstMS43NCwgMCwgMF0sXG4gICAgICByb3RhdGlvbjogWzAsIC1NYXRoLlBJIC8gMiwgMF0sXG4gICAgfSxcbiAgfSxcbiAge1xuICAgIGlkOiAnY29udGFjdCcsXG4gICAgbnVtYmVyOiAnMDQnLFxuICAgIGxhYmVsOiAnQ29udGFjdCcsXG4gICAgZXllYnJvdzogJ1NpZ25hbCBDaGFubmVsJyxcbiAgICBmYWNlOiAnYmFjaycsXG4gICAgYWNjZW50OiAnIzdkZmZhZScsXG4gICAgZmFjZUNvcHk6ICdBdmFpbGFibGUgZm9yIGZ1bGwtc3RhY2sgY29sbGFib3JhdGlvbiwgQUkgYXV0b21hdGlvbiwgYW5kIGNyZWF0aXZlIGZyb250ZW5kIHdvcmsuJyxcbiAgICB0aXRsZTogJ0NvbnRhY3QgUmFodWwnLFxuICAgIHN1YnRpdGxlOiAnT3BlbiB0byByb2xlcywgaW50ZXJuc2hpcHMsIGFuZCBjb2xsYWJvcmF0aW9ucycsXG4gICAgc3VtbWFyeTpcbiAgICAgICdGb3IgZnVsbC1zdGFjayBvcHBvcnR1bml0aWVzLCBBSS1wb3dlcmVkIHdlYiBhcHBsaWNhdGlvbnMsIGF1dG9tYXRpb24gd29ya2Zsb3dzLCBhbmQgY2luZW1hdGljIGZyb250ZW5kIGJ1aWxkcywgdGhpcyBjaGFubmVsIGlzIG9wZW4uJyxcbiAgICBzdGF0czogWydFbWFpbCcsICdQaG9uZScsICdMaW5rZWRJbiddLFxuICAgIGRldGFpbHM6IFtdLFxuICAgIGNhbWVyYToge1xuICAgICAgcG9zaXRpb246IFswLCAwLjMsIC00LjM1XSxcbiAgICAgIHRhcmdldDogWzAsIDAsIC0wLjcyXSxcbiAgICB9LFxuICAgIHBhbmVsOiB7XG4gICAgICBwb3NpdGlvbjogWzAsIDAsIC0xLjc0XSxcbiAgICAgIHJvdGF0aW9uOiBbMCwgTWF0aC5QSSwgMF0sXG4gICAgfSxcbiAgfSxcbiAge1xuICAgIGlkOiAnZ29hbHMnLFxuICAgIG51bWJlcjogJzA1JyxcbiAgICBsYWJlbDogJ0dvYWxzJyxcbiAgICBleWVicm93OiAnRm9yd2FyZCBWZWN0b3InLFxuICAgIGZhY2U6ICd0b3AnLFxuICAgIGFjY2VudDogJyNmZmQxNjYnLFxuICAgIGZhY2VDb3B5OiAnU2hpcCBzdHJvbmdlciBzeXN0ZW1zLCBkZWVwZW4gYmFja2VuZCBkZXNpZ24sIGFuZCBzY2FsZSBBSSBhdXRvbWF0aW9uIHByb2R1Y3RzLicsXG4gICAgdGl0bGU6ICdHb2FscycsXG4gICAgc3VidGl0bGU6ICdXaGVyZSB0aGUgb3JiaXQgaXMgaGVhZGVkJyxcbiAgICBzdW1tYXJ5OlxuICAgICAgJ1RoZSBuZWFyLXRlcm0gbWlzc2lvbiBpcyB0byBncm93IGludG8gYSBzdHJvbmcgZnVsbC1zdGFjayBhbmQgQUkgYXV0b21hdGlvbiBlbmdpbmVlcmluZyByb2xlIHdoaWxlIGJ1aWxkaW5nIHByb2R1Y3RzIHRoYXQgZmVlbCB1c2VmdWwsIHNjYWxhYmxlLCBhbmQgbWVtb3JhYmxlLicsXG4gICAgc3RhdHM6IFsnUm9sZSBHcm93dGgnLCAnU3lzdGVtIERlc2lnbicsICdBSSBQcm9kdWN0cyddLFxuICAgIGRldGFpbHM6IFtcbiAgICAgICdMYW5kIGEgc3Ryb25nIGZ1bGwtc3RhY2sgcm9sZSBhbmQgZ3JvdyBpbnNpZGUgYSBzZXJpb3VzIGVuZ2luZWVyaW5nIHRlYW0uJyxcbiAgICAgICdCdWlsZCBBSS1kcml2ZW4gd2ViIHByb2R1Y3RzIHRoYXQgc29sdmUgcHJhY3RpY2FsIHByb2JsZW1zLicsXG4gICAgICAnSW1wcm92ZSBzeXN0ZW0gZGVzaWduLCBjbG91ZCBhcmNoaXRlY3R1cmUsIGJhY2tlbmQgcmVsaWFiaWxpdHksIGFuZCBzY2FsYWJsZSBhdXRvbWF0aW9uLicsXG4gICAgXSxcbiAgICBjYW1lcmE6IHtcbiAgICAgIHBvc2l0aW9uOiBbMCwgMy45LCAxLjA1XSxcbiAgICAgIHRhcmdldDogWzAsIDAuNzIsIDBdLFxuICAgIH0sXG4gICAgcGFuZWw6IHtcbiAgICAgIHBvc2l0aW9uOiBbMCwgMS43NCwgMF0sXG4gICAgICByb3RhdGlvbjogWy1NYXRoLlBJIC8gMiwgMCwgMF0sXG4gICAgfSxcbiAgfSxcbiAge1xuICAgIGlkOiAnc3RhdHVzJyxcbiAgICBudW1iZXI6ICcwNicsXG4gICAgbGFiZWw6ICdTdGF0dXMnLFxuICAgIGV5ZWJyb3c6ICdMaXZlIFRlbGVtZXRyeScsXG4gICAgZmFjZTogJ2JvdHRvbScsXG4gICAgYWNjZW50OiAnIzVkZjJiNicsXG4gICAgZmFjZUNvcHk6ICdDdXJyZW50bHkgc2hhcnBlbmluZyBmdWxsLXN0YWNrIGRlcHRoLCBBSSBpbnRlZ3JhdGlvbnMsIGFuZCBkZXBsb3ltZW50IGNyYWZ0LicsXG4gICAgdGl0bGU6ICdDdXJyZW50IFN0YXR1cycsXG4gICAgc3VidGl0bGU6ICdCdWlsZGluZywgbGVhcm5pbmcsIGFuZCBwcmVwYXJpbmcgZm9yIHJlYWwtd29ybGQgaW1wYWN0JyxcbiAgICBzdW1tYXJ5OlxuICAgICAgJ1RoZSBjdXJyZW50IG9yYml0IGlzIGZ1bGwtc3RhY2sgZXhlY3V0aW9uOiBzaGlwcGluZyBwcm9qZWN0cywgcmVmaW5pbmcgQVBJcywgZXhwbG9yaW5nIE9wZW5BSSBhbmQgQW50aHJvcGljIHdvcmtmbG93cywgYW5kIGtlZXBpbmcgZGVwbG95bWVudCBwaXBlbGluZXMgcHJvZHVjdGlvbi1taW5kZWQuJyxcbiAgICBzdGF0czogWydBY3RpdmUgQnVpbGQnLCAnUGxhY2VtZW50IFJlYWR5JywgJ0xlYXJuaW5nIExvb3AnXSxcbiAgICBkZXRhaWxzOiBbXG4gICAgICAnQnVpbGRpbmcgTUVSTiBwcm9kdWN0cyB3aXRoIGNsZWFuIHN0YXRlLCBzZWN1cmUgYXV0aCwgUkVTVCBBUElzLCBhbmQgcHJvZHVjdGlvbiBkZXBsb3ltZW50IGhhYml0cy4nLFxuICAgICAgJ0V4cGxvcmluZyBPcGVuQUkgYW5kIEFudGhyb3BpYy1wb3dlcmVkIHdvcmtmbG93cyBmb3IgaW50ZXJ2aWV3cywgaGVhbHRoLCBsZWFybmluZywgYW5kIGF1dG9tYXRpb24uJyxcbiAgICAgICdQcmFjdGljaW5nIGJhY2tlbmQgZnVuZGFtZW50YWxzLCBkYXRhYmFzZSBtb2RlbGluZywgcmVhbC10aW1lIHN5c3RlbXMsIGFuZCBjbG91ZC1yZWFkeSBkZWxpdmVyeS4nLFxuICAgIF0sXG4gICAgY2FtZXJhOiB7XG4gICAgICBwb3NpdGlvbjogWzAsIC0zLjcsIDEuMDVdLFxuICAgICAgdGFyZ2V0OiBbMCwgLTAuNzIsIDBdLFxuICAgIH0sXG4gICAgcGFuZWw6IHtcbiAgICAgIHBvc2l0aW9uOiBbMCwgLTEuNzQsIDBdLFxuICAgICAgcm90YXRpb246IFtNYXRoLlBJIC8gMiwgMCwgMF0sXG4gICAgfSxcbiAgfSxcbl1cblxuZXhwb3J0IGNvbnN0IHNlY3Rpb25NYXAgPSBzZWN0aW9ucy5yZWR1Y2UoKG1hcCwgc2VjdGlvbikgPT4ge1xuICBtYXBbc2VjdGlvbi5pZF0gPSBzZWN0aW9uXG4gIHJldHVybiBtYXBcbn0sIHt9KVxuIl19
