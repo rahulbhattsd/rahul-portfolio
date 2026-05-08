@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import SpaceScene from './components/SpaceScene'
 import { profile, projects } from './data/portfolio'
 
@@ -134,7 +135,17 @@ body {
   line-height: 1.6;
 }
 
-.portfolio-contact-strip a {
+.portfolio-contact-copy {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.portfolio-contact-copy {
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
@@ -142,19 +153,40 @@ body {
   pointer-events: auto;
   transition:
     color 180ms ease,
-    text-shadow 180ms ease;
+    text-shadow 180ms ease,
+    transform 180ms ease;
 }
 
-.portfolio-contact-strip a::before {
+.portfolio-contact-copy::before {
   content: attr(data-label);
   color: rgba(181, 218, 235, 0.46);
   text-transform: uppercase;
 }
 
-.portfolio-contact-strip a:hover,
-.portfolio-contact-strip a:focus-visible {
+.portfolio-contact-copy:hover,
+.portfolio-contact-copy:focus-visible {
   color: #ffffff;
   text-shadow: 0 0 1rem rgba(178, 236, 255, 0.24);
+}
+
+.portfolio-contact-copy:active {
+  transform: translateY(1px);
+}
+
+.portfolio-contact-copy:focus-visible {
+  outline: 2px solid rgba(223, 247, 255, 0.7);
+  outline-offset: 4px;
+}
+
+.portfolio-contact-copy__status {
+  min-width: 3rem;
+  color: rgba(115, 255, 211, 0.9);
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.portfolio-contact-copy__status[data-visible='true'] {
+  opacity: 1;
 }
 
 .portfolio-actions {
@@ -481,7 +513,42 @@ function SocialIcon({ type }) {
   )
 }
 
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    await navigator.clipboard.writeText(text)
+    return
+  }
+
+  const textArea = document.createElement('textarea')
+  textArea.value = text
+  textArea.setAttribute('readonly', '')
+  textArea.style.position = 'fixed'
+  textArea.style.top = '-9999px'
+  document.body.appendChild(textArea)
+  textArea.select()
+
+  try {
+    document.execCommand('copy')
+  } finally {
+    document.body.removeChild(textArea)
+  }
+}
+
 function PortfolioIdentity() {
+  const [copiedField, setCopiedField] = useState(null)
+
+  const copyContactValue = async (field, value) => {
+    try {
+      await copyTextToClipboard(value)
+      setCopiedField(field)
+      window.setTimeout(() => {
+        setCopiedField((currentField) => (currentField === field ? null : currentField))
+      }, 1800)
+    } catch (error) {
+      console.error(`Could not copy ${field}`, error)
+    }
+  }
+
   return (
     <section className="portfolio-identity-layer" aria-label="Rahul Bhatt portfolio introduction">
       <div className="portfolio-identity">
@@ -490,12 +557,38 @@ function PortfolioIdentity() {
         <p className="portfolio-tagline">{profile.tagline}</p>
 
         <div className="portfolio-contact-strip" aria-label="Contact details">
-          <a href={`mailto:${profile.email}`} data-label="Email">
-            {profile.email}
-          </a>
-          <a href={`tel:${profile.phone.replaceAll(' ', '')}`} data-label="Phone">
-            {profile.phone}
-          </a>
+          <button
+            type="button"
+            className="portfolio-contact-copy"
+            data-label="Email"
+            aria-label={`Copy email address ${profile.email}`}
+            onClick={() => copyContactValue('email', profile.email)}
+          >
+            <span>{profile.email}</span>
+            <span
+              className="portfolio-contact-copy__status"
+              aria-live="polite"
+              data-visible={copiedField === 'email'}
+            >
+              Copied
+            </span>
+          </button>
+          <button
+            type="button"
+            className="portfolio-contact-copy"
+            data-label="Phone"
+            aria-label={`Copy phone number ${profile.phone}`}
+            onClick={() => copyContactValue('phone', profile.phone)}
+          >
+            <span>{profile.phone}</span>
+            <span
+              className="portfolio-contact-copy__status"
+              aria-live="polite"
+              data-visible={copiedField === 'phone'}
+            >
+              Copied
+            </span>
+          </button>
         </div>
 
         <div className="portfolio-actions" aria-label="Primary portfolio actions">
