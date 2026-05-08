@@ -4297,7 +4297,17 @@ body {
   line-height: 1.6;
 }
 
-.portfolio-contact-strip a {
+.portfolio-contact-copy {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.portfolio-contact-copy {
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
@@ -4305,19 +4315,40 @@ body {
   pointer-events: auto;
   transition:
     color 180ms ease,
-    text-shadow 180ms ease;
+    text-shadow 180ms ease,
+    transform 180ms ease;
 }
 
-.portfolio-contact-strip a::before {
+.portfolio-contact-copy::before {
   content: attr(data-label);
   color: rgba(181, 218, 235, 0.46);
   text-transform: uppercase;
 }
 
-.portfolio-contact-strip a:hover,
-.portfolio-contact-strip a:focus-visible {
+.portfolio-contact-copy:hover,
+.portfolio-contact-copy:focus-visible {
   color: #ffffff;
   text-shadow: 0 0 1rem rgba(178, 236, 255, 0.24);
+}
+
+.portfolio-contact-copy:active {
+  transform: translateY(1px);
+}
+
+.portfolio-contact-copy:focus-visible {
+  outline: 2px solid rgba(223, 247, 255, 0.7);
+  outline-offset: 4px;
+}
+
+.portfolio-contact-copy__status {
+  min-width: 3rem;
+  color: rgba(115, 255, 211, 0.9);
+  opacity: 0;
+  transition: opacity 160ms ease;
+}
+
+.portfolio-contact-copy__status[data-visible='true'] {
+  opacity: 1;
 }
 
 .portfolio-actions {
@@ -4617,4 +4648,4 @@ body {
     height: 2.35rem;
   }
 }
-`;function Xw({type:e}){return e===`github`?(0,$.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,"data-fill-icon":`true`,children:(0,$.jsx)(`path`,{d:`M12 2.25c-5.39 0-9.75 4.43-9.75 9.9 0 4.37 2.79 8.08 6.66 9.39.49.09.67-.21.67-.48v-1.82c-2.71.6-3.28-1.18-3.28-1.18-.44-1.15-1.08-1.45-1.08-1.45-.89-.62.07-.61.07-.61.98.07 1.5 1.04 1.5 1.04.87 1.51 2.28 1.07 2.84.82.09-.64.34-1.07.62-1.32-2.16-.25-4.43-1.09-4.43-4.88 0-1.08.38-1.96 1.01-2.65-.1-.25-.44-1.25.1-2.61 0 0 .83-.27 2.69 1.01.78-.22 1.62-.33 2.46-.33s1.68.11 2.46.33c1.86-1.28 2.68-1.01 2.68-1.01.54 1.36.2 2.36.1 2.61.63.69 1.01 1.57 1.01 2.65 0 3.8-2.28 4.62-4.45 4.87.35.31.66.91.66 1.84v2.73c0 .27.18.58.67.48 3.87-1.31 6.65-5.02 6.65-9.39 0-5.47-4.36-9.9-9.75-9.9Z`})}):e===`linkedin`?(0,$.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,"data-fill-icon":`true`,children:(0,$.jsx)(`path`,{d:`M5.2 8.72h3.1v10.03H5.2V8.72Zm1.55-4.98c.99 0 1.79.8 1.79 1.79s-.8 1.78-1.79 1.78-1.79-.79-1.79-1.78.8-1.79 1.79-1.79Zm3.62 4.98h2.97v1.37h.04c.41-.79 1.43-1.62 2.94-1.62 3.15 0 3.73 2.07 3.73 4.77v5.51h-3.09v-4.88c0-1.16-.02-2.66-1.62-2.66-1.63 0-1.88 1.27-1.88 2.58v4.96h-3.09V8.72Z`})}):(0,$.jsxs)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,children:[(0,$.jsx)(`path`,{d:`M4.75 6.75h14.5v10.5H4.75z`}),(0,$.jsx)(`path`,{d:`m5.25 7.25 6.75 5.5 6.75-5.5`})]})}function Zw(){return(0,$.jsx)(`section`,{className:`portfolio-identity-layer`,"aria-label":`Rahul Bhatt portfolio introduction`,children:(0,$.jsxs)(`div`,{className:`portfolio-identity`,children:[(0,$.jsx)(`h1`,{children:qw.name}),(0,$.jsx)(`p`,{className:`portfolio-role`,children:qw.role}),(0,$.jsx)(`p`,{className:`portfolio-tagline`,children:qw.tagline}),(0,$.jsxs)(`div`,{className:`portfolio-contact-strip`,"aria-label":`Contact details`,children:[(0,$.jsx)(`a`,{href:`mailto:${qw.email}`,"data-label":`Email`,children:qw.email}),(0,$.jsx)(`a`,{href:`tel:${qw.phone.replaceAll(` `,``)}`,"data-label":`Phone`,children:qw.phone})]}),(0,$.jsxs)(`div`,{className:`portfolio-actions`,"aria-label":`Primary portfolio actions`,children:[(0,$.jsx)(`a`,{className:`portfolio-action portfolio-action--primary`,href:`mailto:${qw.email}`,children:`Contact`}),(0,$.jsx)(`a`,{className:`portfolio-action`,href:qw.github,target:`_blank`,rel:`noreferrer`,children:`View Projects`})]}),(0,$.jsxs)(`nav`,{className:`portfolio-social`,"aria-label":`Social links`,children:[(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:qw.github,target:`_blank`,rel:`noreferrer`,"aria-label":`GitHub`,children:(0,$.jsx)(Xw,{type:`github`})}),(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:qw.linkedin,target:`_blank`,rel:`noreferrer`,"aria-label":`LinkedIn`,children:(0,$.jsx)(Xw,{type:`linkedin`})}),(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:`mailto:${qw.email}`,"aria-label":`Email Rahul Bhatt`,children:(0,$.jsx)(Xw,{type:`email`})})]})]})})}function Qw(){return(0,$.jsxs)(`aside`,{className:`portfolio-project-rail`,"aria-label":`Live project links`,children:[(0,$.jsx)(`p`,{children:`Live Systems`}),Jw.map(e=>(0,$.jsxs)(`a`,{href:e.liveUrl,target:`_blank`,rel:`noreferrer`,children:[(0,$.jsx)(`strong`,{children:e.name}),(0,$.jsx)(`span`,{children:e.type})]},e.name))]})}function $w(){return(0,$.jsxs)(`main`,{className:`black-hole-app`,children:[(0,$.jsx)(`style`,{children:Yw}),(0,$.jsx)(Kw,{}),(0,$.jsx)(Zw,{}),(0,$.jsx)(Qw,{})]})}var eT=document.getElementById(`root`);if(!eT)throw Error(`React root element #root was not found in index.html`);console.info(`[main] React root found. Rendering app...`),(0,y.createRoot)(eT).render((0,$.jsx)(v.StrictMode,{children:(0,$.jsx)($w,{})}));
+`;function Xw({type:e}){return e===`github`?(0,$.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,"data-fill-icon":`true`,children:(0,$.jsx)(`path`,{d:`M12 2.25c-5.39 0-9.75 4.43-9.75 9.9 0 4.37 2.79 8.08 6.66 9.39.49.09.67-.21.67-.48v-1.82c-2.71.6-3.28-1.18-3.28-1.18-.44-1.15-1.08-1.45-1.08-1.45-.89-.62.07-.61.07-.61.98.07 1.5 1.04 1.5 1.04.87 1.51 2.28 1.07 2.84.82.09-.64.34-1.07.62-1.32-2.16-.25-4.43-1.09-4.43-4.88 0-1.08.38-1.96 1.01-2.65-.1-.25-.44-1.25.1-2.61 0 0 .83-.27 2.69 1.01.78-.22 1.62-.33 2.46-.33s1.68.11 2.46.33c1.86-1.28 2.68-1.01 2.68-1.01.54 1.36.2 2.36.1 2.61.63.69 1.01 1.57 1.01 2.65 0 3.8-2.28 4.62-4.45 4.87.35.31.66.91.66 1.84v2.73c0 .27.18.58.67.48 3.87-1.31 6.65-5.02 6.65-9.39 0-5.47-4.36-9.9-9.75-9.9Z`})}):e===`linkedin`?(0,$.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,"data-fill-icon":`true`,children:(0,$.jsx)(`path`,{d:`M5.2 8.72h3.1v10.03H5.2V8.72Zm1.55-4.98c.99 0 1.79.8 1.79 1.79s-.8 1.78-1.79 1.78-1.79-.79-1.79-1.78.8-1.79 1.79-1.79Zm3.62 4.98h2.97v1.37h.04c.41-.79 1.43-1.62 2.94-1.62 3.15 0 3.73 2.07 3.73 4.77v5.51h-3.09v-4.88c0-1.16-.02-2.66-1.62-2.66-1.63 0-1.88 1.27-1.88 2.58v4.96h-3.09V8.72Z`})}):(0,$.jsxs)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,children:[(0,$.jsx)(`path`,{d:`M4.75 6.75h14.5v10.5H4.75z`}),(0,$.jsx)(`path`,{d:`m5.25 7.25 6.75 5.5 6.75-5.5`})]})}async function Zw(e){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(e);return}let t=document.createElement(`textarea`);t.value=e,t.setAttribute(`readonly`,``),t.style.position=`fixed`,t.style.top=`-9999px`,document.body.appendChild(t),t.select();try{document.execCommand(`copy`)}finally{document.body.removeChild(t)}}function Qw(){let[e,t]=(0,v.useState)(null),n=async(e,n)=>{try{await Zw(n),t(e),window.setTimeout(()=>{t(t=>t===e?null:t)},1800)}catch(t){console.error(`Could not copy ${e}`,t)}};return(0,$.jsx)(`section`,{className:`portfolio-identity-layer`,"aria-label":`Rahul Bhatt portfolio introduction`,children:(0,$.jsxs)(`div`,{className:`portfolio-identity`,children:[(0,$.jsx)(`h1`,{children:qw.name}),(0,$.jsx)(`p`,{className:`portfolio-role`,children:qw.role}),(0,$.jsx)(`p`,{className:`portfolio-tagline`,children:qw.tagline}),(0,$.jsxs)(`div`,{className:`portfolio-contact-strip`,"aria-label":`Contact details`,children:[(0,$.jsxs)(`button`,{type:`button`,className:`portfolio-contact-copy`,"data-label":`Email`,"aria-label":`Copy email address ${qw.email}`,onClick:()=>n(`email`,qw.email),children:[(0,$.jsx)(`span`,{children:qw.email}),(0,$.jsx)(`span`,{className:`portfolio-contact-copy__status`,"aria-live":`polite`,"data-visible":e===`email`,children:`Copied`})]}),(0,$.jsxs)(`button`,{type:`button`,className:`portfolio-contact-copy`,"data-label":`Phone`,"aria-label":`Copy phone number ${qw.phone}`,onClick:()=>n(`phone`,qw.phone),children:[(0,$.jsx)(`span`,{children:qw.phone}),(0,$.jsx)(`span`,{className:`portfolio-contact-copy__status`,"aria-live":`polite`,"data-visible":e===`phone`,children:`Copied`})]})]}),(0,$.jsxs)(`div`,{className:`portfolio-actions`,"aria-label":`Primary portfolio actions`,children:[(0,$.jsx)(`a`,{className:`portfolio-action portfolio-action--primary`,href:`mailto:${qw.email}`,children:`Contact`}),(0,$.jsx)(`a`,{className:`portfolio-action`,href:qw.github,target:`_blank`,rel:`noreferrer`,children:`View Projects`})]}),(0,$.jsxs)(`nav`,{className:`portfolio-social`,"aria-label":`Social links`,children:[(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:qw.github,target:`_blank`,rel:`noreferrer`,"aria-label":`GitHub`,children:(0,$.jsx)(Xw,{type:`github`})}),(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:qw.linkedin,target:`_blank`,rel:`noreferrer`,"aria-label":`LinkedIn`,children:(0,$.jsx)(Xw,{type:`linkedin`})}),(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:`mailto:${qw.email}`,"aria-label":`Email Rahul Bhatt`,children:(0,$.jsx)(Xw,{type:`email`})})]})]})})}function $w(){return(0,$.jsxs)(`aside`,{className:`portfolio-project-rail`,"aria-label":`Live project links`,children:[(0,$.jsx)(`p`,{children:`Live Systems`}),Jw.map(e=>(0,$.jsxs)(`a`,{href:e.liveUrl,target:`_blank`,rel:`noreferrer`,children:[(0,$.jsx)(`strong`,{children:e.name}),(0,$.jsx)(`span`,{children:e.type})]},e.name))]})}function eT(){return(0,$.jsxs)(`main`,{className:`black-hole-app`,children:[(0,$.jsx)(`style`,{children:Yw}),(0,$.jsx)(Kw,{}),(0,$.jsx)(Qw,{}),(0,$.jsx)($w,{})]})}var tT=document.getElementById(`root`);if(!tT)throw Error(`React root element #root was not found in index.html`);console.info(`[main] React root found. Rendering app...`),(0,y.createRoot)(tT).render((0,$.jsx)(v.StrictMode,{children:(0,$.jsx)(eT,{})}));
