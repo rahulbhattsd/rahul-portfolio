@@ -148,6 +148,7 @@ body {
 .portfolio-contact-copy {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
   gap: 0.42rem;
   color: rgba(237, 248, 255, 0.72);
   pointer-events: auto;
@@ -161,6 +162,10 @@ body {
   content: attr(data-label);
   color: rgba(181, 218, 235, 0.46);
   text-transform: uppercase;
+}
+
+.portfolio-contact-copy__value {
+  overflow-wrap: anywhere;
 }
 
 .portfolio-contact-copy:hover,
@@ -179,14 +184,29 @@ body {
 }
 
 .portfolio-contact-copy__status {
-  min-width: 3rem;
-  color: rgba(115, 255, 211, 0.9);
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35rem;
+  min-width: 3.3rem;
+  justify-content: center;
+  padding: 0 0.45rem;
+  border: 1px solid rgba(178, 236, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(178, 236, 255, 0.075);
+  color: rgba(223, 247, 255, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 1.1rem rgba(137, 218, 255, 0.12);
   opacity: 0;
-  transition: opacity 160ms ease;
+  transform: translateY(0.15rem);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 .portfolio-contact-copy__status[data-visible='true'] {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .portfolio-actions {
@@ -309,6 +329,81 @@ body {
   stroke: none;
 }
 
+.portfolio-mobile-live {
+  display: block;
+  margin: 1.15rem 0 0;
+  pointer-events: auto;
+}
+
+.portfolio-mobile-live p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.58rem;
+  color: rgba(223, 244, 255, 0.6);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.62rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.portfolio-mobile-live p::before {
+  content: '';
+  width: 1.35rem;
+  height: 1px;
+  background: rgba(223, 244, 255, 0.34);
+}
+
+.portfolio-mobile-live__links {
+  display: flex;
+  gap: 0.55rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  scroll-padding-inline: 0.1rem;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-mobile-live__links::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-mobile-live a {
+  display: grid;
+  flex: 0 0 min(12rem, 72vw);
+  min-height: 4.1rem;
+  gap: 0.18rem;
+  padding: 0.64rem 0.72rem;
+  border: 1px solid rgba(226, 245, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(246, 251, 255, 0.88);
+  scroll-snap-align: start;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.portfolio-mobile-live a:hover,
+.portfolio-mobile-live a:focus-visible {
+  border-color: rgba(226, 245, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.portfolio-mobile-live strong {
+  font-size: 0.86rem;
+  line-height: 1.15;
+}
+
+.portfolio-mobile-live span {
+  color: rgba(225, 241, 250, 0.5);
+  font-size: 0.66rem;
+  line-height: 1.35;
+}
+
 .portfolio-project-rail {
   position: fixed;
   top: 4.7rem;
@@ -376,6 +471,16 @@ body {
   line-height: 1.35;
 }
 
+.portfolio-project-rail__links {
+  display: grid;
+}
+
+@media (min-width: 1181px) {
+  .portfolio-mobile-live {
+    display: none;
+  }
+}
+
 @keyframes identity-rise {
   from {
     opacity: 0;
@@ -408,13 +513,58 @@ body {
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1180px) and (min-width: 921px) {
   .portfolio-identity-layer {
-    padding: 0 2rem 3.2rem;
+    padding: 0 4rem 4rem;
+  }
+
+  .portfolio-identity {
+    width: min(620px, calc(100vw - 5rem));
   }
 
   .portfolio-identity h1 {
-    font-size: 4rem;
+    font-size: clamp(4.2rem, 8vw, 5.2rem);
+  }
+}
+
+@media (max-width: 920px) {
+  .black-hole-app::after {
+    opacity: 0.045;
+  }
+
+  .portfolio-identity-layer {
+    align-items: flex-end;
+    padding:
+      calc(5.4rem + env(safe-area-inset-top, 0px))
+      calc(2rem + env(safe-area-inset-right, 0px))
+      calc(2.75rem + env(safe-area-inset-bottom, 0px))
+      calc(2rem + env(safe-area-inset-left, 0px));
+  }
+
+  .portfolio-identity {
+    width: min(36rem, 100%);
+    max-height: calc(100vh - 8.15rem);
+    overflow-y: auto;
+    padding-left: 1.15rem;
+    padding-right: 0.35rem;
+    pointer-events: auto;
+    scrollbar-width: none;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .portfolio-identity::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-identity::before {
+    inset: -1.2rem -1.5rem -1.15rem -1rem;
+    background:
+      linear-gradient(90deg, rgba(3, 5, 12, 0.72), rgba(3, 5, 12, 0.28) 64%, transparent);
+  }
+
+  .portfolio-identity h1 {
+    font-size: clamp(3.6rem, 9vw, 4.35rem);
   }
 
   .portfolio-tagline {
@@ -424,17 +574,27 @@ body {
   .portfolio-contact-strip {
     max-width: 28rem;
   }
+
+  .portfolio-contact-copy {
+    min-height: 1.9rem;
+  }
 }
 
 @media (max-width: 560px) {
   .portfolio-identity-layer {
     align-items: flex-end;
-    padding: 0 1.25rem 1.5rem;
+    padding:
+      calc(3rem + env(safe-area-inset-top, 0px))
+      calc(1.15rem + env(safe-area-inset-right, 0px))
+      calc(1.35rem + env(safe-area-inset-bottom, 0px))
+      calc(1.15rem + env(safe-area-inset-left, 0px));
   }
 
   .portfolio-identity {
     width: 100%;
+    max-height: calc(100vh - 4.35rem);
     padding-left: 1rem;
+    padding-right: 0.15rem;
   }
 
   .portfolio-identity::before {
@@ -443,7 +603,7 @@ body {
   }
 
   .portfolio-identity h1 {
-    font-size: 3.1rem;
+    font-size: clamp(2.68rem, 14vw, 3.2rem);
   }
 
   .portfolio-role {
@@ -460,9 +620,31 @@ body {
   }
 
   .portfolio-contact-strip {
-    max-width: 20rem;
+    max-width: 100%;
     gap: 0.35rem 0.65rem;
     font-size: 0.64rem;
+  }
+
+  .portfolio-contact-copy {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.28rem 0.55rem;
+  }
+
+  .portfolio-contact-copy::before {
+    flex: 0 0 3rem;
+  }
+
+  .portfolio-contact-copy__value {
+    flex: 1 1 min(12rem, calc(100% - 7.2rem));
+    min-width: 0;
+  }
+
+  .portfolio-contact-copy__status {
+    min-height: 1.25rem;
+    min-width: 3.05rem;
+    padding: 0 0.38rem;
   }
 
   .portfolio-actions {
@@ -484,6 +666,45 @@ body {
   .portfolio-social-link {
     width: 2.35rem;
     height: 2.35rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .portfolio-identity h1 {
+    font-size: clamp(2.35rem, 13vw, 2.75rem);
+  }
+
+  .portfolio-role {
+    font-size: 0.72rem;
+  }
+
+  .portfolio-tagline {
+    font-size: 0.8rem;
+  }
+
+  .portfolio-actions {
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .portfolio-action {
+    flex: 1 1 9rem;
+  }
+}
+
+@media (max-height: 640px) and (max-width: 920px) {
+  .portfolio-identity-layer {
+    align-items: center;
+    padding-top: calc(1.25rem + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .portfolio-identity {
+    max-height: calc(100vh - 2.5rem);
+  }
+
+  .portfolio-social {
+    margin-top: 0.75rem;
   }
 }
 `
@@ -556,6 +777,18 @@ function PortfolioIdentity() {
         <p className="portfolio-role">{profile.role}</p>
         <p className="portfolio-tagline">{profile.tagline}</p>
 
+        <section className="portfolio-mobile-live" aria-label="Live project links">
+          <p>Live Systems</p>
+          <div className="portfolio-mobile-live__links">
+            {projects.map((project) => (
+              <a key={project.name} href={project.liveUrl} target="_blank" rel="noreferrer">
+                <strong>{project.name}</strong>
+                <span>{project.type}</span>
+              </a>
+            ))}
+          </div>
+        </section>
+
         <div className="portfolio-contact-strip" aria-label="Contact details">
           <button
             type="button"
@@ -564,7 +797,7 @@ function PortfolioIdentity() {
             aria-label={`Copy email address ${profile.email}`}
             onClick={() => copyContactValue('email', profile.email)}
           >
-            <span>{profile.email}</span>
+            <span className="portfolio-contact-copy__value">{profile.email}</span>
             <span
               className="portfolio-contact-copy__status"
               aria-live="polite"
@@ -580,7 +813,7 @@ function PortfolioIdentity() {
             aria-label={`Copy phone number ${profile.phone}`}
             onClick={() => copyContactValue('phone', profile.phone)}
           >
-            <span>{profile.phone}</span>
+            <span className="portfolio-contact-copy__value">{profile.phone}</span>
             <span
               className="portfolio-contact-copy__status"
               aria-live="polite"
@@ -620,12 +853,14 @@ function ProjectRail() {
   return (
     <aside className="portfolio-project-rail" aria-label="Live project links">
       <p>Live Systems</p>
-      {projects.map((project) => (
-        <a key={project.name} href={project.liveUrl} target="_blank" rel="noreferrer">
-          <strong>{project.name}</strong>
-          <span>{project.type}</span>
-        </a>
-      ))}
+      <div className="portfolio-project-rail__links">
+        {projects.map((project) => (
+          <a key={project.name} href={project.liveUrl} target="_blank" rel="noreferrer">
+            <strong>{project.name}</strong>
+            <span>{project.type}</span>
+          </a>
+        ))}
+      </div>
     </aside>
   )
 }
