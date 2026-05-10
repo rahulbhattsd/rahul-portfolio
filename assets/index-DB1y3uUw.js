@@ -4310,6 +4310,7 @@ body {
 .portfolio-contact-copy {
   display: inline-flex;
   align-items: center;
+  max-width: 100%;
   gap: 0.42rem;
   color: rgba(237, 248, 255, 0.72);
   pointer-events: auto;
@@ -4323,6 +4324,10 @@ body {
   content: attr(data-label);
   color: rgba(181, 218, 235, 0.46);
   text-transform: uppercase;
+}
+
+.portfolio-contact-copy__value {
+  overflow-wrap: anywhere;
 }
 
 .portfolio-contact-copy:hover,
@@ -4341,14 +4346,29 @@ body {
 }
 
 .portfolio-contact-copy__status {
-  min-width: 3rem;
-  color: rgba(115, 255, 211, 0.9);
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.35rem;
+  min-width: 3.3rem;
+  justify-content: center;
+  padding: 0 0.45rem;
+  border: 1px solid rgba(178, 236, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(178, 236, 255, 0.075);
+  color: rgba(223, 247, 255, 0.9);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 1.1rem rgba(137, 218, 255, 0.12);
   opacity: 0;
-  transition: opacity 160ms ease;
+  transform: translateY(0.15rem);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease;
 }
 
 .portfolio-contact-copy__status[data-visible='true'] {
   opacity: 1;
+  transform: translateY(0);
 }
 
 .portfolio-actions {
@@ -4471,6 +4491,81 @@ body {
   stroke: none;
 }
 
+.portfolio-mobile-live {
+  display: block;
+  margin: 1.15rem 0 0;
+  pointer-events: auto;
+}
+
+.portfolio-mobile-live p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.58rem;
+  color: rgba(223, 244, 255, 0.6);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.62rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.portfolio-mobile-live p::before {
+  content: '';
+  width: 1.35rem;
+  height: 1px;
+  background: rgba(223, 244, 255, 0.34);
+}
+
+.portfolio-mobile-live__links {
+  display: flex;
+  gap: 0.55rem;
+  overflow-x: auto;
+  padding-bottom: 0.35rem;
+  scroll-padding-inline: 0.1rem;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portfolio-mobile-live__links::-webkit-scrollbar {
+  display: none;
+}
+
+.portfolio-mobile-live a {
+  display: grid;
+  flex: 0 0 min(12rem, 72vw);
+  min-height: 4.1rem;
+  gap: 0.18rem;
+  padding: 0.64rem 0.72rem;
+  border: 1px solid rgba(226, 245, 255, 0.15);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.045);
+  color: rgba(246, 251, 255, 0.88);
+  scroll-snap-align: start;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease;
+}
+
+.portfolio-mobile-live a:hover,
+.portfolio-mobile-live a:focus-visible {
+  border-color: rgba(226, 245, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.portfolio-mobile-live strong {
+  font-size: 0.86rem;
+  line-height: 1.15;
+}
+
+.portfolio-mobile-live span {
+  color: rgba(225, 241, 250, 0.5);
+  font-size: 0.66rem;
+  line-height: 1.35;
+}
+
 .portfolio-project-rail {
   position: fixed;
   top: 4.7rem;
@@ -4538,6 +4633,16 @@ body {
   line-height: 1.35;
 }
 
+.portfolio-project-rail__links {
+  display: grid;
+}
+
+@media (min-width: 1181px) {
+  .portfolio-mobile-live {
+    display: none;
+  }
+}
+
 @keyframes identity-rise {
   from {
     opacity: 0;
@@ -4570,13 +4675,58 @@ body {
   }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1180px) and (min-width: 921px) {
   .portfolio-identity-layer {
-    padding: 0 2rem 3.2rem;
+    padding: 0 4rem 4rem;
+  }
+
+  .portfolio-identity {
+    width: min(620px, calc(100vw - 5rem));
   }
 
   .portfolio-identity h1 {
-    font-size: 4rem;
+    font-size: clamp(4.2rem, 8vw, 5.2rem);
+  }
+}
+
+@media (max-width: 920px) {
+  .black-hole-app::after {
+    opacity: 0.045;
+  }
+
+  .portfolio-identity-layer {
+    align-items: flex-end;
+    padding:
+      calc(5.4rem + env(safe-area-inset-top, 0px))
+      calc(2rem + env(safe-area-inset-right, 0px))
+      calc(2.75rem + env(safe-area-inset-bottom, 0px))
+      calc(2rem + env(safe-area-inset-left, 0px));
+  }
+
+  .portfolio-identity {
+    width: min(36rem, 100%);
+    max-height: calc(100vh - 8.15rem);
+    overflow-y: auto;
+    padding-left: 1.15rem;
+    padding-right: 0.35rem;
+    pointer-events: auto;
+    scrollbar-width: none;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .portfolio-identity::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-identity::before {
+    inset: -1.2rem -1.5rem -1.15rem -1rem;
+    background:
+      linear-gradient(90deg, rgba(3, 5, 12, 0.72), rgba(3, 5, 12, 0.28) 64%, transparent);
+  }
+
+  .portfolio-identity h1 {
+    font-size: clamp(3.6rem, 9vw, 4.35rem);
   }
 
   .portfolio-tagline {
@@ -4586,17 +4736,27 @@ body {
   .portfolio-contact-strip {
     max-width: 28rem;
   }
+
+  .portfolio-contact-copy {
+    min-height: 1.9rem;
+  }
 }
 
 @media (max-width: 560px) {
   .portfolio-identity-layer {
     align-items: flex-end;
-    padding: 0 1.25rem 1.5rem;
+    padding:
+      calc(3rem + env(safe-area-inset-top, 0px))
+      calc(1.15rem + env(safe-area-inset-right, 0px))
+      calc(1.35rem + env(safe-area-inset-bottom, 0px))
+      calc(1.15rem + env(safe-area-inset-left, 0px));
   }
 
   .portfolio-identity {
     width: 100%;
+    max-height: calc(100vh - 4.35rem);
     padding-left: 1rem;
+    padding-right: 0.15rem;
   }
 
   .portfolio-identity::before {
@@ -4605,7 +4765,7 @@ body {
   }
 
   .portfolio-identity h1 {
-    font-size: 3.1rem;
+    font-size: clamp(2.68rem, 14vw, 3.2rem);
   }
 
   .portfolio-role {
@@ -4622,9 +4782,31 @@ body {
   }
 
   .portfolio-contact-strip {
-    max-width: 20rem;
+    max-width: 100%;
     gap: 0.35rem 0.65rem;
     font-size: 0.64rem;
+  }
+
+  .portfolio-contact-copy {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.28rem 0.55rem;
+  }
+
+  .portfolio-contact-copy::before {
+    flex: 0 0 3rem;
+  }
+
+  .portfolio-contact-copy__value {
+    flex: 1 1 min(12rem, calc(100% - 7.2rem));
+    min-width: 0;
+  }
+
+  .portfolio-contact-copy__status {
+    min-height: 1.25rem;
+    min-width: 3.05rem;
+    padding: 0 0.38rem;
   }
 
   .portfolio-actions {
@@ -4648,4 +4830,43 @@ body {
     height: 2.35rem;
   }
 }
-`;function Xw({type:e}){return e===`github`?(0,$.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,"data-fill-icon":`true`,children:(0,$.jsx)(`path`,{d:`M12 2.25c-5.39 0-9.75 4.43-9.75 9.9 0 4.37 2.79 8.08 6.66 9.39.49.09.67-.21.67-.48v-1.82c-2.71.6-3.28-1.18-3.28-1.18-.44-1.15-1.08-1.45-1.08-1.45-.89-.62.07-.61.07-.61.98.07 1.5 1.04 1.5 1.04.87 1.51 2.28 1.07 2.84.82.09-.64.34-1.07.62-1.32-2.16-.25-4.43-1.09-4.43-4.88 0-1.08.38-1.96 1.01-2.65-.1-.25-.44-1.25.1-2.61 0 0 .83-.27 2.69 1.01.78-.22 1.62-.33 2.46-.33s1.68.11 2.46.33c1.86-1.28 2.68-1.01 2.68-1.01.54 1.36.2 2.36.1 2.61.63.69 1.01 1.57 1.01 2.65 0 3.8-2.28 4.62-4.45 4.87.35.31.66.91.66 1.84v2.73c0 .27.18.58.67.48 3.87-1.31 6.65-5.02 6.65-9.39 0-5.47-4.36-9.9-9.75-9.9Z`})}):e===`linkedin`?(0,$.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,"data-fill-icon":`true`,children:(0,$.jsx)(`path`,{d:`M5.2 8.72h3.1v10.03H5.2V8.72Zm1.55-4.98c.99 0 1.79.8 1.79 1.79s-.8 1.78-1.79 1.78-1.79-.79-1.79-1.78.8-1.79 1.79-1.79Zm3.62 4.98h2.97v1.37h.04c.41-.79 1.43-1.62 2.94-1.62 3.15 0 3.73 2.07 3.73 4.77v5.51h-3.09v-4.88c0-1.16-.02-2.66-1.62-2.66-1.63 0-1.88 1.27-1.88 2.58v4.96h-3.09V8.72Z`})}):(0,$.jsxs)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,children:[(0,$.jsx)(`path`,{d:`M4.75 6.75h14.5v10.5H4.75z`}),(0,$.jsx)(`path`,{d:`m5.25 7.25 6.75 5.5 6.75-5.5`})]})}async function Zw(e){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(e);return}let t=document.createElement(`textarea`);t.value=e,t.setAttribute(`readonly`,``),t.style.position=`fixed`,t.style.top=`-9999px`,document.body.appendChild(t),t.select();try{document.execCommand(`copy`)}finally{document.body.removeChild(t)}}function Qw(){let[e,t]=(0,v.useState)(null),n=async(e,n)=>{try{await Zw(n),t(e),window.setTimeout(()=>{t(t=>t===e?null:t)},1800)}catch(t){console.error(`Could not copy ${e}`,t)}};return(0,$.jsx)(`section`,{className:`portfolio-identity-layer`,"aria-label":`Rahul Bhatt portfolio introduction`,children:(0,$.jsxs)(`div`,{className:`portfolio-identity`,children:[(0,$.jsx)(`h1`,{children:qw.name}),(0,$.jsx)(`p`,{className:`portfolio-role`,children:qw.role}),(0,$.jsx)(`p`,{className:`portfolio-tagline`,children:qw.tagline}),(0,$.jsxs)(`div`,{className:`portfolio-contact-strip`,"aria-label":`Contact details`,children:[(0,$.jsxs)(`button`,{type:`button`,className:`portfolio-contact-copy`,"data-label":`Email`,"aria-label":`Copy email address ${qw.email}`,onClick:()=>n(`email`,qw.email),children:[(0,$.jsx)(`span`,{children:qw.email}),(0,$.jsx)(`span`,{className:`portfolio-contact-copy__status`,"aria-live":`polite`,"data-visible":e===`email`,children:`Copied`})]}),(0,$.jsxs)(`button`,{type:`button`,className:`portfolio-contact-copy`,"data-label":`Phone`,"aria-label":`Copy phone number ${qw.phone}`,onClick:()=>n(`phone`,qw.phone),children:[(0,$.jsx)(`span`,{children:qw.phone}),(0,$.jsx)(`span`,{className:`portfolio-contact-copy__status`,"aria-live":`polite`,"data-visible":e===`phone`,children:`Copied`})]})]}),(0,$.jsxs)(`div`,{className:`portfolio-actions`,"aria-label":`Primary portfolio actions`,children:[(0,$.jsx)(`a`,{className:`portfolio-action portfolio-action--primary`,href:`mailto:${qw.email}`,children:`Contact`}),(0,$.jsx)(`a`,{className:`portfolio-action`,href:qw.github,target:`_blank`,rel:`noreferrer`,children:`View Projects`})]}),(0,$.jsxs)(`nav`,{className:`portfolio-social`,"aria-label":`Social links`,children:[(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:qw.github,target:`_blank`,rel:`noreferrer`,"aria-label":`GitHub`,children:(0,$.jsx)(Xw,{type:`github`})}),(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:qw.linkedin,target:`_blank`,rel:`noreferrer`,"aria-label":`LinkedIn`,children:(0,$.jsx)(Xw,{type:`linkedin`})}),(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:`mailto:${qw.email}`,"aria-label":`Email Rahul Bhatt`,children:(0,$.jsx)(Xw,{type:`email`})})]})]})})}function $w(){return(0,$.jsxs)(`aside`,{className:`portfolio-project-rail`,"aria-label":`Live project links`,children:[(0,$.jsx)(`p`,{children:`Live Systems`}),Jw.map(e=>(0,$.jsxs)(`a`,{href:e.liveUrl,target:`_blank`,rel:`noreferrer`,children:[(0,$.jsx)(`strong`,{children:e.name}),(0,$.jsx)(`span`,{children:e.type})]},e.name))]})}function eT(){return(0,$.jsxs)(`main`,{className:`black-hole-app`,children:[(0,$.jsx)(`style`,{children:Yw}),(0,$.jsx)(Kw,{}),(0,$.jsx)(Qw,{}),(0,$.jsx)($w,{})]})}var tT=document.getElementById(`root`);if(!tT)throw Error(`React root element #root was not found in index.html`);console.info(`[main] React root found. Rendering app...`),(0,y.createRoot)(tT).render((0,$.jsx)(v.StrictMode,{children:(0,$.jsx)(eT,{})}));
+
+@media (max-width: 390px) {
+  .portfolio-identity h1 {
+    font-size: clamp(2.35rem, 13vw, 2.75rem);
+  }
+
+  .portfolio-role {
+    font-size: 0.72rem;
+  }
+
+  .portfolio-tagline {
+    font-size: 0.8rem;
+  }
+
+  .portfolio-actions {
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .portfolio-action {
+    flex: 1 1 9rem;
+  }
+}
+
+@media (max-height: 640px) and (max-width: 920px) {
+  .portfolio-identity-layer {
+    align-items: center;
+    padding-top: calc(1.25rem + env(safe-area-inset-top, 0px));
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .portfolio-identity {
+    max-height: calc(100vh - 2.5rem);
+  }
+
+  .portfolio-social {
+    margin-top: 0.75rem;
+  }
+}
+`;function Xw({type:e}){return e===`github`?(0,$.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,"data-fill-icon":`true`,children:(0,$.jsx)(`path`,{d:`M12 2.25c-5.39 0-9.75 4.43-9.75 9.9 0 4.37 2.79 8.08 6.66 9.39.49.09.67-.21.67-.48v-1.82c-2.71.6-3.28-1.18-3.28-1.18-.44-1.15-1.08-1.45-1.08-1.45-.89-.62.07-.61.07-.61.98.07 1.5 1.04 1.5 1.04.87 1.51 2.28 1.07 2.84.82.09-.64.34-1.07.62-1.32-2.16-.25-4.43-1.09-4.43-4.88 0-1.08.38-1.96 1.01-2.65-.1-.25-.44-1.25.1-2.61 0 0 .83-.27 2.69 1.01.78-.22 1.62-.33 2.46-.33s1.68.11 2.46.33c1.86-1.28 2.68-1.01 2.68-1.01.54 1.36.2 2.36.1 2.61.63.69 1.01 1.57 1.01 2.65 0 3.8-2.28 4.62-4.45 4.87.35.31.66.91.66 1.84v2.73c0 .27.18.58.67.48 3.87-1.31 6.65-5.02 6.65-9.39 0-5.47-4.36-9.9-9.75-9.9Z`})}):e===`linkedin`?(0,$.jsx)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,"data-fill-icon":`true`,children:(0,$.jsx)(`path`,{d:`M5.2 8.72h3.1v10.03H5.2V8.72Zm1.55-4.98c.99 0 1.79.8 1.79 1.79s-.8 1.78-1.79 1.78-1.79-.79-1.79-1.78.8-1.79 1.79-1.79Zm3.62 4.98h2.97v1.37h.04c.41-.79 1.43-1.62 2.94-1.62 3.15 0 3.73 2.07 3.73 4.77v5.51h-3.09v-4.88c0-1.16-.02-2.66-1.62-2.66-1.63 0-1.88 1.27-1.88 2.58v4.96h-3.09V8.72Z`})}):(0,$.jsxs)(`svg`,{viewBox:`0 0 24 24`,"aria-hidden":`true`,children:[(0,$.jsx)(`path`,{d:`M4.75 6.75h14.5v10.5H4.75z`}),(0,$.jsx)(`path`,{d:`m5.25 7.25 6.75 5.5 6.75-5.5`})]})}async function Zw(e){if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(e);return}let t=document.createElement(`textarea`);t.value=e,t.setAttribute(`readonly`,``),t.style.position=`fixed`,t.style.top=`-9999px`,document.body.appendChild(t),t.select();try{document.execCommand(`copy`)}finally{document.body.removeChild(t)}}function Qw(){let[e,t]=(0,v.useState)(null),n=async(e,n)=>{try{await Zw(n),t(e),window.setTimeout(()=>{t(t=>t===e?null:t)},1800)}catch(t){console.error(`Could not copy ${e}`,t)}};return(0,$.jsx)(`section`,{className:`portfolio-identity-layer`,"aria-label":`Rahul Bhatt portfolio introduction`,children:(0,$.jsxs)(`div`,{className:`portfolio-identity`,children:[(0,$.jsx)(`h1`,{children:qw.name}),(0,$.jsx)(`p`,{className:`portfolio-role`,children:qw.role}),(0,$.jsx)(`p`,{className:`portfolio-tagline`,children:qw.tagline}),(0,$.jsxs)(`section`,{className:`portfolio-mobile-live`,"aria-label":`Live project links`,children:[(0,$.jsx)(`p`,{children:`Live Systems`}),(0,$.jsx)(`div`,{className:`portfolio-mobile-live__links`,children:Jw.map(e=>(0,$.jsxs)(`a`,{href:e.liveUrl,target:`_blank`,rel:`noreferrer`,children:[(0,$.jsx)(`strong`,{children:e.name}),(0,$.jsx)(`span`,{children:e.type})]},e.name))})]}),(0,$.jsxs)(`div`,{className:`portfolio-contact-strip`,"aria-label":`Contact details`,children:[(0,$.jsxs)(`button`,{type:`button`,className:`portfolio-contact-copy`,"data-label":`Email`,"aria-label":`Copy email address ${qw.email}`,onClick:()=>n(`email`,qw.email),children:[(0,$.jsx)(`span`,{className:`portfolio-contact-copy__value`,children:qw.email}),(0,$.jsx)(`span`,{className:`portfolio-contact-copy__status`,"aria-live":`polite`,"data-visible":e===`email`,children:`Copied`})]}),(0,$.jsxs)(`button`,{type:`button`,className:`portfolio-contact-copy`,"data-label":`Phone`,"aria-label":`Copy phone number ${qw.phone}`,onClick:()=>n(`phone`,qw.phone),children:[(0,$.jsx)(`span`,{className:`portfolio-contact-copy__value`,children:qw.phone}),(0,$.jsx)(`span`,{className:`portfolio-contact-copy__status`,"aria-live":`polite`,"data-visible":e===`phone`,children:`Copied`})]})]}),(0,$.jsxs)(`div`,{className:`portfolio-actions`,"aria-label":`Primary portfolio actions`,children:[(0,$.jsx)(`a`,{className:`portfolio-action portfolio-action--primary`,href:`mailto:${qw.email}`,children:`Contact`}),(0,$.jsx)(`a`,{className:`portfolio-action`,href:qw.github,target:`_blank`,rel:`noreferrer`,children:`View Projects`})]}),(0,$.jsxs)(`nav`,{className:`portfolio-social`,"aria-label":`Social links`,children:[(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:qw.github,target:`_blank`,rel:`noreferrer`,"aria-label":`GitHub`,children:(0,$.jsx)(Xw,{type:`github`})}),(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:qw.linkedin,target:`_blank`,rel:`noreferrer`,"aria-label":`LinkedIn`,children:(0,$.jsx)(Xw,{type:`linkedin`})}),(0,$.jsx)(`a`,{className:`portfolio-social-link`,href:`mailto:${qw.email}`,"aria-label":`Email Rahul Bhatt`,children:(0,$.jsx)(Xw,{type:`email`})})]})]})})}function $w(){return(0,$.jsxs)(`aside`,{className:`portfolio-project-rail`,"aria-label":`Live project links`,children:[(0,$.jsx)(`p`,{children:`Live Systems`}),(0,$.jsx)(`div`,{className:`portfolio-project-rail__links`,children:Jw.map(e=>(0,$.jsxs)(`a`,{href:e.liveUrl,target:`_blank`,rel:`noreferrer`,children:[(0,$.jsx)(`strong`,{children:e.name}),(0,$.jsx)(`span`,{children:e.type})]},e.name))})]})}function eT(){return(0,$.jsxs)(`main`,{className:`black-hole-app`,children:[(0,$.jsx)(`style`,{children:Yw}),(0,$.jsx)(Kw,{}),(0,$.jsx)(Qw,{}),(0,$.jsx)($w,{})]})}var tT=document.getElementById(`root`);if(!tT)throw Error(`React root element #root was not found in index.html`);console.info(`[main] React root found. Rendering app...`),(0,y.createRoot)(tT).render((0,$.jsx)(v.StrictMode,{children:(0,$.jsx)(eT,{})}));
