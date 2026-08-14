@@ -17,7 +17,7 @@ export default function SpaceScene() {
     <div className="space-scene-shell" aria-hidden="true">
       <Canvas
         className="space-scene-canvas"
-        style={{ display: 'block', width: '100vw', height: '100vh' }}
+        style={{ display: 'block', width: '100vw', height: '100dvh' }}
         camera={{ position: [0, 0.62, 8.4], fov: 46, near: 0.1, far: 160 }}
         dpr={[1, 2]}
         gl={{

@@ -26,10 +26,11 @@ body {
 .space-scene-shell,
 .space-scene-canvas {
   position: fixed !important;
+  touch-action: none;
   inset: 0 !important;
   width: 100vw !important;
-  height: 100vh !important;
-  min-height: 100vh;
+  height: 100dvh !important;
+  min-height: 100dvh;
   overflow: hidden;
   background: #04050d;
 }
@@ -86,6 +87,7 @@ body {
   background:
     linear-gradient(90deg, rgba(3, 5, 12, 0.68), rgba(3, 5, 12, 0.28) 58%, transparent);
   box-shadow: -1.8rem 0 4.5rem rgba(110, 214, 255, 0.08);
+  -webkit-mask-image: linear-gradient(90deg, black 0 72%, transparent);
   mask-image: linear-gradient(90deg, black 0 72%, transparent);
   pointer-events: none;
   backdrop-filter: blur(10px);
@@ -543,7 +545,7 @@ body {
 
   .portfolio-identity {
     width: min(36rem, 100%);
-    max-height: calc(100vh - 8.15rem);
+    max-height: calc(100dvh - 8.15rem);
     overflow-y: auto;
     padding-left: 1.15rem;
     padding-right: 0.35rem;
@@ -592,7 +594,7 @@ body {
 
   .portfolio-identity {
     width: 100%;
-    max-height: calc(100vh - 4.35rem);
+    max-height: calc(100dvh - 4.35rem);
     padding-left: 1rem;
     padding-right: 0.15rem;
   }
@@ -700,7 +702,7 @@ body {
   }
 
   .portfolio-identity {
-    max-height: calc(100vh - 2.5rem);
+    max-height: calc(100dvh - 2.5rem);
   }
 
   .portfolio-social {
@@ -865,10 +867,54 @@ function ProjectRail() {
   )
 }
 
+
+function hasWebGLSupport() {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+  } catch (e) {
+    return false;
+  }
+}
+
 export default function App() {
+  if (!hasWebGLSupport()) {
+    return (
+      <main className="fallback-page">
+        <style>{appStyles + `
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+`}</style>
+        <div className="fallback-card">
+          <p>System Error</p>
+          <h1>WebGL Not Supported</h1>
+          <div style={{ color: 'rgba(237, 247, 255, 0.66)', fontSize: '0.95rem', lineHeight: '1.68' }}>
+            Your device or browser does not support WebGL, which is required for this 3D experience.
+          </div>
+          <pre>ERR_WEBGL_UNSUPPORTED</pre>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main className="black-hole-app">
-      <style>{appStyles}</style>
+      <style>{appStyles + `
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+`}</style>
       <SpaceScene />
       <PortfolioIdentity />
       <ProjectRail />
