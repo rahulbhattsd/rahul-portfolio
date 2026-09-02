@@ -67,14 +67,14 @@ export const projects = [
     repoUrl: 'https://github.com/rahulbhattsd/healthify',
   },
   {
-    name: 'StudEdu',
-    type: 'Learning Platform',
+    name: 'Token Gate',
+    type: 'LLM Gateway',
     description:
-      'Full-stack learning management platform with enrollment automation and course progress tracking.',
-    tech: ['React.js', 'Node.js', 'MongoDB'],
-    metric: 'EdTech',
-    liveUrl: 'https://studedu.onrender.com/',
-    repoUrl: 'https://github.com/rahulbhattsd/StudEdu',
+      'LLM cost gateway and token minimizer with multi-provider chat routing, semantic caching, and optional RAG.',
+    tech: ['Node.js', 'Express', 'TypeScript', 'PostgreSQL', 'Redis', 'React'],
+    metric: 'LLM Gateway',
+    liveUrl: '',
+    repoUrl: 'https://github.com/rahulbhattsd/TokenGate',
   },
 ]
 
@@ -162,7 +162,7 @@ export const sections = [
     eyebrow: 'Build Archive',
     face: 'left',
     accent: '#ff6fb5',
-    faceCopy: 'Mock.ai, VibeCart, Healthify, and StudEdu orbit this portfolio.',
+    faceCopy: 'Mock.ai, VibeCart, Healthify, and Token Gate orbit this portfolio.',
     title: 'Project Worlds',
     subtitle: 'AI automation, commerce, health AI, and learning systems',
     summary:
